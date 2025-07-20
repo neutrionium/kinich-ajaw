@@ -29,10 +29,10 @@ const hearts_width = 384;
 const hearts_height = 97;
 
 const tree_config = [
-  { width: 11, height: 17, image: "images/tree_1.png" },
-  { width: 16, height: 26, image: "images/tree_2.png" },
-  { width: 28, height: 26, image: "images/tree_3.png" },
-  { width: 23, height: 17, image: "images/tree_4.png" },
+  { width: 11, height: 17, image: "./images/tree_1.png" },
+  { width: 16, height: 26, image: "./images/tree_2.png" },
+  { width: 28, height: 26, image: "./images/tree_3.png" },
+  { width: 23, height: 17, image: "./images/tree_4.png" },
 ];
 
 let player = null;
