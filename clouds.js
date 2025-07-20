@@ -11,7 +11,7 @@ export default class Clouds {
         this.y = 0;
 
         this.cloudsImage = new Image();
-        this.cloudsImage.src = "images/clouds.png";
+        this.cloudsImage.src = "./images/clouds.PNG";
         this.image = this.cloudsImage;
     }
 
