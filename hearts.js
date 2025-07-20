@@ -10,7 +10,7 @@ export default class Hearts {
         this.y = 0;
 
         this.heartsImage = new Image();
-        this.heartsImage.src = "images/hearts.png";
+        this.heartsImage.src = "./images/hearts.PNG";
         this.image = this.heartsImage;
     }
 
