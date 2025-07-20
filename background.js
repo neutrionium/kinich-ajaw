@@ -10,7 +10,7 @@ export default class Background {
         this.y = 0;
 
         this.backgroundImage = new Image();
-        this.backgroundImage.src = "images/background.png";
+        this.backgroundImage.src = "./images/background.PNG";
         this.image = this.backgroundImage;
     }
 
