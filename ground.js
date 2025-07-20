@@ -11,7 +11,7 @@ export default class Ground {
         this.y = 0;
 
         this.groundImage = new Image();
-        this.groundImage.src = "images/ground.png";
+        this.groundImage.src = "./images/ground.PNG";
         this.image = this.groundImage;
     }
 
