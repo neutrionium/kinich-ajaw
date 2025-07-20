@@ -21,17 +21,17 @@ export default class Player {
         this.yStandingPosition = this.y;
 
         this.standingStillImage = new Image();
-        this.standingStillImage.src = "images/ajaw_still.png";
+        this.standingStillImage.src = "./images/ajaw_still.PNG";
         this.image = this.standingStillImage;
 
         this.jumpImage = new Image();
-        this.jumpImage.src = "images/ajaw_jump.png";
+        this.jumpImage.src = "./images/ajaw_jump.PNG";
 
         const runImage1 = new Image();
-        runImage1.src = "images/ajaw_1.png";
+        runImage1.src = "./images/ajaw_1.PNG";
 
         const runImage2 = new Image();
-        runImage2.src = "images/ajaw_2.png";
+        runImage2.src = "./images/ajaw_2.PNG";
 
         this.runImages.push(runImage1);
         this.runImages.push(runImage2);
@@ -56,21 +56,24 @@ export default class Player {
         this.run(gameSpeed, frameTimeDelta);
         this.jump(frameTimeDelta);
     }
+    if (this.jumpInProgress) {
+      this.image = this.standingStillImage;
+    }
+    this.jump(frameTimeDelta);
+    }
 
     jump(frameTimeDelta) {
-        // Start jump
+
         if (this.jumpPressed && !this.jumpInProgress && this.y >= this.yStandingPosition) {
             this.jumpInProgress = true;
             this.jump_velocity = -this.jump_impulse;
             this.image = this.jumpImage;
         }
 
-        // Apply physics while in air
         if (this.y < this.yStandingPosition || this.jump_velocity < 0) {
             this.jump_velocity += this.gravity;
             this.y += this.jump_velocity * frameTimeDelta * 0.1 * this.scaleRatio;
 
-            // Land on ground
             if (this.y > this.yStandingPosition) {
                 this.y = this.yStandingPosition;
                 this.jump_velocity = 0;
