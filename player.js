@@ -7,7 +7,7 @@ export default class Player {
     max_jump_velocity = 4.5;
     gravity = 0.29;
     jump_impulse = 4.3;
-    maxFrameTimeDelta = 16.67;
+    maxFrameTimeDelta = 1000/60;
 
     constructor(ctx, width, height, jumpHeight, scaleRatio) {
         this.ctx = ctx;
@@ -62,8 +62,8 @@ export default class Player {
     }
 
     jump(frameTimeDelta) {
-        const delta = Math.max(
-            frameTimeDelta, maxFrameTimeDelta); 
+        const delta = Math.min(
+            frameTimeDelta, this.maxFrameTimeDelta); 
 
         if (this.jumpPressed && !this.jumpInProgress && this.y >= this.yStandingPosition) {
             this.jumpInProgress = true;
