@@ -60,7 +60,7 @@ export default class Player {
     this.jump(frameTimeDelta);
     }
 
-    jump(frameTimeDelta) {
+    jump() {
 
         if (this.jumpPressed && !this.jumpInProgress && this.y >= this.yStandingPosition) {
             this.jumpInProgress = true;
@@ -70,7 +70,7 @@ export default class Player {
 
         if (this.y < this.yStandingPosition || this.jump_velocity < 0) {
             this.jump_velocity += this.gravity;
-            this.y += this.jump_velocity * frameTimeDelta * 0.1 * this.scaleRatio;
+            this.y += this.jump_velocity * 17 * 0.1 * this.scaleRatio;
 
             if (this.y > this.yStandingPosition) {
                 this.y = this.yStandingPosition;
