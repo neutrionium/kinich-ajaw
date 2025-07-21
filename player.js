@@ -8,6 +8,7 @@ export default class Player {
     gravity = 0.29;
     jump_impulse = 4.3;
     maxFrameTimeDelta = 1000/60;
+    minFallSpeed = 0.5;
 
     constructor(ctx, width, height, jumpHeight, scaleRatio) {
         this.ctx = ctx;
@@ -70,10 +71,14 @@ export default class Player {
             this.jump_velocity = -this.jump_impulse;
             this.image = this.jumpImage;
         }
-
+        
         if (this.y < this.yStandingPosition || this.jump_velocity < 0) {
             this.jump_velocity += this.gravity;
-            this.y += this.jump_velocity * delta * 0.1 * this.scaleRatio;
+            if (this.jump_velocity > 0) {
+            this.jump_velocity = Math.max(this.jump_velocity, this.minFallSpeed);
+            }
+            this.y += this.jump_velocity * this.scaleRatio;
+        }
 
             if (this.y > this.yStandingPosition) {
                 this.y = this.yStandingPosition;
