@@ -86,7 +86,6 @@ export default class Player {
                 this.jumpInProgress = false;
             }
         }
-    }
 
     run(gameSpeed, frameTimeDelta) {
         if (this.walkAnimationTimer <= 0) {
