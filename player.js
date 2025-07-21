@@ -7,7 +7,7 @@ export default class Player {
     max_jump_velocity = 4.5;
     gravity = 0.29;
     jump_impulse = 4.3;
-    maxFrameTimeDelta = 1000/60;
+    maxFrameTimeDelta = 16.67;
 
     constructor(ctx, width, height, jumpHeight, scaleRatio) {
         this.ctx = ctx;
